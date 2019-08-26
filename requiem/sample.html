@@ -135,6 +135,60 @@
 							</p>
 						</div>
 					</div>
+					<p style="text-align:justify">
+					<style>
+					table {
+						border-spacing: 0;
+						width: 100%;
+						border: 1px solid #ddd;
+						}
+					th {
+						padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#93a1a1;color:#fdf6e3;background-color:#657b83;
+						cursor: pointer;
+						}
+					td {
+						padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#93a1a1;color:#002b36;background-color:#fdf6e3;
+						}
+					th, td {
+						text-align: center;
+						padding: 16px;
+						}
+					tr:nth-child(even) {
+						background-color: #f2f2f2
+						}
+					</style>
+					<body>
+						<table id="RequiemSample">
+					<tr>
+						<th onclick="sortTable(0)">Name</th>
+						<th onclick="sortTable(1)"><i>z</i></th>
+						<th onclick="sortTable(2)">M<sub>1450</sub></th>
+						<th onclick="sortTable(3)">Exp. Time</th>
+						<th onclick="sortTable(4)">Prog. ID</th>
+						<th onclick="sortTable(4)">Ref.</th>
+					</tr>
+
+					<tr>
+						<td>J0305-3150</td>
+						<td>6.6145</td>
+						<td>-26.12</td>
+						<td>8640</td>
+						<td>094.B-0893</td>
+						<td><a href="https://ui.adsabs.harvard.edu/abs/2017ApJ...848...78F/abstract">Farina+17</a></td>
+					</tr>
+
+					<tr>
+						<td>P323+12</td>
+						<td>6.5881</td>
+						<td>-27.06</td>
+						<td>2964</td>
+						<td>0101.A-0656</td>
+						<td>Farina+19</td>
+					</tr>
+
+
+					</table>
+					</p>
 				</div>
 			</div>
 		</div>
@@ -162,6 +216,62 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
+	<script>
+	function sortTable(n) {
+		var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+		table = document.getElementById("RequiemSample");
+		switching = true;
+		//Set the sorting direction to ascending:
+		dir = "asc"; 
+		/*Make a loop that will continue until
+		no switching has been done:*/
+		while (switching) {
+		//start by saying: no switching is done:
+		switching = false;
+		rows = table.rows;
+		/*Loop through all table rows (except the
+		first, which contains table headers):*/
+		for (i = 1; i < (rows.length - 1); i++) {
+			//start by saying there should be no switching:
+			shouldSwitch = false;
+			/*Get the two elements you want to compare,
+			one from current row and one from the next:*/
+			x = rows[i].getElementsByTagName("TD")[n];
+			y = rows[i + 1].getElementsByTagName("TD")[n];
+			/*check if the two rows should switch place,
+			based on the direction, asc or desc:*/
+			if (dir == "asc") {
+				if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+					//if so, mark as a switch and break the loop:
+					shouldSwitch= true;
+					break;
+					}
+				} else if (dir == "desc") {
+				if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+					//if so, mark as a switch and break the loop:
+					shouldSwitch = true;
+					break;
+					}
+				}
+			}
+		if (shouldSwitch) {
+			/*If a switch has been marked, make the switch
+			and mark that a switch has been done:*/
+			rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+			switching = true;
+			//Each time a switch is done, increase this count by 1:
+			switchcount ++;      
+			} else {
+			/*If no switching has been done AND the direction is "asc",
+			set the direction to "desc" and run the while loop again.*/
+			if (switchcount == 0 && dir == "asc") {
+						dir = "desc";
+						switching = true;
+						}
+			}
+		}
+	}
+	</script>
 	</body>
 </html>
 
