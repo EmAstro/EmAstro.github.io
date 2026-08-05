@@ -95,10 +95,10 @@ main {
 
 .hero-image {
   margin: 2rem auto 0.5rem;
-  max-width: 100%;
+  max-width: 40%;
   border: 1px solid var(--border-gray);
   background: var(--bg-panel-alt);
-  min-height: 320px;
+  min-height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
