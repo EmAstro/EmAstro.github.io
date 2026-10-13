@@ -230,6 +230,33 @@ td { color: var(--text-muted); }
   margin-top: 0.3rem;
 }
 
+/* --- Team: alphabetical member list (no photos) --- */
+.member-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0 2rem;
+  margin: 1rem 0 2rem;
+}
+
+.member-list li {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border-gray);
+  line-height: 1.4;
+}
+
+.member-list .name {
+  display: block;
+  color: var(--text-main);
+}
+
+.member-list .inst {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+
 /* --- Publications --- */
 .pub-entry {
   background: var(--bg-panel);
