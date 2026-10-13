@@ -241,7 +241,18 @@ td { color: var(--text-muted); }
 /* --- Team: alphabetical member list (no photos) --- */
 .member-list {
   list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 2rem;
   margin: 1rem 0 2rem;
+}
+
+@media (max-width: 760px) {
+  .member-list { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .member-list { grid-template-columns: 1fr; }
 }
 
 .member-list li {
@@ -252,10 +263,12 @@ td { color: var(--text-muted); }
 }
 
 .member-list .name {
+  display: block;
   color: var(--text-main);
 }
 
 .member-list .inst {
+  display: block;
   color: var(--text-muted);
   font-size: 0.9rem;
 }
