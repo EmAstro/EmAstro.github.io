@@ -1,0 +1,1154 @@
+/* ==========================================================================
+   Emanuele Paolo Farina — shared stylesheet
+   Used by the main site and by the REQUIEM sub-site (which only overrides
+   the colour variables in requiem/css/theme.css).
+
+   Contents
+     1. Theme variables
+     2. Base elements
+     3. Grid
+     4. Icons
+     5. Navigation (desktop)
+     6. Navigation (mobile off-canvas menu)
+     7. Hero header
+     8. Sections and headings
+     9. Home page cards
+    10. Feature lists (icon + text)
+    11. Profile cards (education, REQUIEM links)
+    12. Contact details
+    13. Buttons
+    14. Image carousel
+    15. Data table
+    16. Back-to-top button
+    17. Scroll-reveal animations
+   ========================================================================== */
+
+
+/* 1. Theme variables
+   ========================================================================== */
+
+:root {
+  --accent: #17b794;
+  --hero-overlay: rgba(29, 43, 83, 0.89);
+
+  /* The three home-page cards use progressively darker greens. */
+  --card-1: #17b794;
+  --card-1-icon: #15a989;
+  --card-2: #15a585;
+  --card-2-icon: #13977a;
+  --card-3: #129377;
+  --card-3-icon: #118a6f;
+
+  --text: #777;
+  --heading: #000;
+  --muted: #bfbfbf;
+  --section-grey: #efefef;
+  --border: #d9d9d9;
+
+  --font: "Droid Sans", Arial, sans-serif;
+  --container: 1140px;
+  --gutter: 15px;
+  --mobile: 768px; /* reference only: media queries below use this value */
+}
+
+
+/* 2. Base elements
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  background: #fff;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 20px;
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--heading);
+}
+h1 { font-size: 36px; }
+h2 { font-size: 30px; }
+h3 { font-size: 24px; }
+
+p {
+  margin: 0 0 20px;
+}
+
+ul {
+  margin: 0 0 10px;
+}
+
+img {
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+::selection {
+  color: #fff;
+  background: var(--accent);
+}
+
+/* Utilities */
+.text-center  { text-align: center; }
+.text-justify { text-align: justify; }
+
+.img-fluid {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  position: relative;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Wrapper that slides aside when the mobile menu opens. */
+.page {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* 3. Grid
+   A minimal subset of the Bootstrap 3 grid: columns are full width on
+   phones and take their fraction of the row from the named breakpoint up.
+   sm >= 768px, md >= 992px, lg >= 1200px.
+   ========================================================================== */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(-1 * var(--gutter));
+}
+
+.row > * {
+  position: relative;
+  width: 100%;
+  padding: 0 var(--gutter);
+}
+
+.row--spaced {
+  padding-bottom: 4em;
+}
+
+@media (min-width: 768px) {
+  .col-sm-4 { width: 33.3333%; }
+  .col-sm-6 { width: 50%; }
+}
+
+@media (min-width: 992px) {
+  .col-md-3 { width: 25%; }
+  .col-md-4 { width: 33.3333%; }
+  .col-md-5 { width: 41.6667%; }
+  .col-md-6 { width: 50%; }
+  .push-md-1 { left: 8.3333%; }
+
+  /* Centred reading column (two thirds of the container). */
+  .narrow {
+    max-width: 66.6667%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-3 { width: 25%; }
+  .col-lg-4 { width: 33.3333%; }
+}
+
+
+/* 4. Icons
+   Two icon fonts, subset to the handful of glyphs the site uses.
+   To add an icon, re-subset the original font with the new code point.
+   ========================================================================== */
+
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.woff2") format("woff2");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "themify";
+  src: url("../fonts/themify.woff2") format("woff2");
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"],
+[class^="ti-"],
+[class*=" ti-"] {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"],
+[class*=" icon-"] { font-family: "icomoon"; }
+
+[class^="ti-"],
+[class*=" ti-"] { font-family: "themify"; }
+
+.icon-mail2::before    { content: "\e9da"; }
+.icon-arrow-up::before { content: "\e096"; }
+.icon-check::before    { content: "\e116"; }
+
+.ti-user::before         { content: "\e602"; }
+.ti-search::before       { content: "\e610"; }
+.ti-layers::before       { content: "\e62f"; }
+.ti-arrow-right::before  { content: "\e628"; }
+.ti-arrow-left::before   { content: "\e629"; }
+.ti-announcement::before { content: "\e64f"; }
+.ti-book::before         { content: "\e6b7"; }
+.ti-linkedin::before     { content: "\e735"; }
+
+
+/* 5. Navigation (desktop)
+   ========================================================================== */
+
+.site-nav {
+  position: absolute;
+  top: 0;
+  z-index: 1001;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.site-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav li {
+  display: inline;
+}
+
+/* Row 1: e-mail / LinkedIn / ORCID icons */
+.site-nav .nav-social {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.nav-social a {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.nav-social a:hover {
+  color: #fff;
+}
+
+/* Row 2: optional site name on the left, page links on the right */
+.nav-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.nav-logo a {
+  color: #fff;
+}
+
+.site-nav .nav-menu {
+  margin-left: auto;
+  text-align: right;
+}
+
+.site-nav .nav-menu a {
+  padding: 30px 10px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.site-nav .nav-menu a:hover,
+.site-nav .nav-menu a:focus,
+.site-nav .nav-menu .active > a {
+  color: #fff;
+}
+
+/* Drop-down sub-menus, opened on hover or keyboard focus. */
+.has-dropdown {
+  position: relative;
+}
+
+.site-nav .dropdown {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 1002;
+  width: 130px;
+  padding: 20px;
+  text-align: left;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Small arrow pointing at the parent link */
+.site-nav .dropdown::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 32px;
+  border: 8px solid transparent;
+  border-bottom-color: #fff;
+  pointer-events: none;
+}
+
+.has-dropdown:hover > .dropdown,
+.has-dropdown:focus-within > .dropdown {
+  visibility: visible;
+  animation: dropdown-in 0.5s both;
+}
+
+.site-nav .dropdown li {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.site-nav .dropdown li:last-child {
+  margin-bottom: 0;
+}
+
+.site-nav .dropdown a {
+  display: block;
+  padding: 2px 0;
+  font-size: 15px;
+  line-height: 1.2;
+  color: #999;
+}
+
+.site-nav .dropdown a:hover {
+  color: #000;
+}
+
+@keyframes dropdown-in {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 768px) {
+  .site-nav .nav-menu {
+    display: none;
+  }
+  .site-nav .nav-social {
+    text-align: left;
+  }
+}
+
+
+/* 6. Navigation (mobile off-canvas menu)
+   js/site.js copies .nav-menu into #offcanvas and adds the burger button.
+   ========================================================================== */
+
+.nav-toggle,
+#offcanvas {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle,
+  #offcanvas {
+    display: block;
+  }
+}
+
+.nav-toggle {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  z-index: 2001;
+  width: 44px;
+  height: 44px;
+  padding: 6px 0 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Three-bar "burger" drawn with one <i> and its two pseudo-elements. */
+.nav-toggle i,
+.nav-toggle i::before,
+.nav-toggle i::after {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.2s ease-out;
+}
+
+.nav-toggle i {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-toggle i::before,
+.nav-toggle i::after {
+  content: "";
+}
+
+.nav-toggle i::before { top: -7px; }
+.nav-toggle i::after  { bottom: -7px; }
+.nav-toggle:hover i::before { top: -10px; }
+.nav-toggle:hover i::after  { bottom: -10px; }
+
+/* Open state: the burger becomes a cross. */
+.menu-open .nav-toggle i { background: transparent; }
+.menu-open .nav-toggle i::before { top: 0; transform: rotate(45deg); }
+.menu-open .nav-toggle i::after  { bottom: 0; transform: rotate(-45deg); }
+
+#offcanvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1901;
+  width: 270px;
+  padding: 45px 40px 40px;
+  overflow-y: auto;
+  background: #000;
+  transform: translateX(270px);
+  transition: transform 0.5s;
+}
+
+.menu-open #offcanvas {
+  transform: none;
+}
+
+/* Dim the page behind the open menu. */
+.menu-open .page {
+  position: absolute;
+  overflow: hidden;
+}
+
+.menu-open .page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 101;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#offcanvas ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+#offcanvas a {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#offcanvas a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#offcanvas .has-dropdown {
+  position: relative;
+}
+
+#offcanvas .has-dropdown > a {
+  padding-right: 30px;
+}
+
+/* In the off-canvas menu sub-menus are expanded with a toggle button. */
+#offcanvas .dropdown {
+  position: static;
+  display: none;
+  width: auto;
+  padding: 0 0 0 20px;
+  background: none;
+  box-shadow: none;
+  visibility: visible;
+  opacity: 1;
+  animation: none;
+}
+
+#offcanvas .dropdown::before {
+  display: none;
+}
+
+#offcanvas .has-dropdown.open > .dropdown {
+  display: block;
+}
+
+.submenu-toggle {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  padding: 0;
+  font-family: "icomoon";
+  font-size: 20px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.2);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.submenu-toggle::before {
+  content: "\e921";
+}
+
+.open > .submenu-toggle {
+  transform: rotate(-180deg);
+}
+
+
+/* 7. Hero header
+   Full-width banner with a background image and a coloured overlay.
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  height: 900px;
+  background-image: url("../images/img_bg_1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--hero-overlay);
+}
+
+.hero > .container {
+  z-index: 10;
+  height: 100%;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.hero h1,
+.hero h2 {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 59px;
+  line-height: 1.5;
+}
+
+.hero h2 {
+  margin-bottom: 30px;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.hero a:hover {
+  color: #fff;
+}
+
+/* Shorter, centred variant used on every page except the home page. */
+.hero--small {
+  height: 500px;
+  text-align: center;
+}
+
+.hero--small .hero-content {
+  margin: 0 auto;
+}
+
+/* REQUIEM pages show their logo inside the banner. */
+.hero-logo {
+  display: block;
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 600px;
+  }
+  .hero h1 {
+    margin-bottom: 10px;
+    font-size: 34px;
+    line-height: 1.2;
+  }
+  .hero--small {
+    height: auto;
+    padding: 9em 0 3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    text-align: center;
+  }
+}
+
+
+/* 8. Sections and headings
+   ========================================================================== */
+
+.section {
+  position: relative;
+  padding: 7em 0;
+}
+
+.section--grey {
+  background: var(--section-grey);
+}
+
+.section--bordered {
+  border-bottom: 1px solid var(--border);
+}
+
+.section-heading {
+  margin-bottom: 5em;
+}
+
+.section-heading h2 {
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* Short accent-coloured underline below every section title. */
+.section-heading h2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50px;
+  height: 2px;
+  margin-left: -25px;
+  background: var(--accent);
+}
+
+.section-heading p {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #1a1a1a;
+}
+
+/* Research page: accent-coloured section titles. */
+.section-heading--accent h2 {
+  color: var(--accent);
+}
+
+/* Secondary title inside a section (no capitals, no underline). */
+.section-heading .subheading {
+  margin-top: 20px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.section-heading .subheading::before {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3em 0;
+  }
+}
+
+
+/* 9. Home page cards
+   Three coloured cards that overlap the bottom of the hero banner.
+   The middle one is raised and casts a shadow.
+   ========================================================================== */
+
+.home-cards {
+  position: relative;
+  top: -7em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home-card {
+  position: relative;
+  z-index: 7;
+  width: 33.33%;
+  padding: 30px;
+  text-align: center;
+  background: var(--card-1);
+}
+
+.home-card h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.home-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.home-card .card-icon {
+  position: relative;
+  top: -3em;
+  display: block;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 10px;
+  background: var(--card-1-icon);
+  border-radius: 50%;
+}
+
+.home-card .card-icon i {
+  display: block;
+  font-size: 40px;
+  line-height: 90px;
+  color: #fff;
+}
+
+.home-card:nth-child(2) {
+  z-index: 10;
+  background: var(--card-2);
+  box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.25);
+}
+
+.home-card:nth-child(2) .card-icon {
+  background: var(--card-2-icon);
+}
+
+.home-card:nth-child(2) .card-body {
+  position: relative;
+  top: -3em;
+}
+
+/* Extend the middle card 50px above and 30px below its neighbours. */
+.home-card:nth-child(2)::before,
+.home-card:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: var(--card-2);
+}
+.home-card:nth-child(2)::before { top: -50px; height: 50px; }
+.home-card:nth-child(2)::after  { bottom: -30px; height: 30px; }
+
+.home-card:nth-child(3) {
+  background: var(--card-3);
+}
+
+.home-card:nth-child(3) .card-icon {
+  background: var(--card-3-icon);
+}
+
+@media (max-width: 768px) {
+  .home-cards {
+    top: -2em;
+  }
+  .home-card {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .home-card:nth-child(2) {
+    box-shadow: none;
+  }
+  .home-card:nth-child(2) .card-body {
+    top: 0;
+  }
+  .home-card:nth-child(2)::before,
+  .home-card:nth-child(2)::after {
+    display: none;
+  }
+}
+
+
+/* 10. Feature lists (icon + text)
+   ========================================================================== */
+
+.feature {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.feature-icon {
+  flex: 0 0 15%;
+  text-align: center;
+  font-size: 40px;
+  color: var(--accent);
+}
+
+.feature-text {
+  flex: 0 0 80%;
+}
+
+/* Items without an icon (e.g. REQUIEM images page) use the full width. */
+.feature-text:only-child {
+  flex-basis: 100%;
+}
+
+/* Captioned images and videos (REQUIEM images page) */
+figure.feature {
+  margin: 0 0 30px;
+}
+
+
+/* 11. Profile cards (education, REQUIEM links)
+   ========================================================================== */
+
+.profile {
+  margin-bottom: 7em;
+  text-align: center;
+}
+
+.profile img {
+  width: 100px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+
+.profile h3 {
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+
+.profile .role {
+  display: block;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: var(--muted);
+}
+
+.profile p {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    margin-bottom: 3em;
+  }
+}
+
+
+/* 12. Contact details
+   ========================================================================== */
+
+.contact-info {
+  margin: 0 0 30px;
+  padding: 7em 0 0;
+  list-style: none;
+}
+
+.contact-info li {
+  position: relative;
+  margin: 0 0 30px;
+  padding-left: 50px;
+}
+
+.contact-info li::before {
+  position: absolute;
+  top: 0.05em;
+  left: 0;
+  font-family: "icomoon";
+  font-size: 23px;
+  line-height: 1;
+  color: #ccc;
+}
+
+.contact-info .address::before { content: "\e9d1"; font-size: 30px; }
+.contact-info .email::before   { content: "\e9da"; }
+.contact-info .url::before     { content: "\e9af"; }
+
+@media (max-width: 992px) {
+  .contact-info {
+    padding-top: 2em;
+  }
+}
+
+
+/* 13. Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 8px 30px;
+  font-size: 16px;
+  line-height: 1.42857;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #000;
+  background: #fff;
+}
+
+
+/* 14. Image carousel
+   Horizontal scroll-snap strip: 1 / 2 / 3 images per view depending on the
+   screen width. js/site.js adds the arrows and the page dots.
+   ========================================================================== */
+
+.carousel {
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .carousel-item { flex-basis: calc((100% - 20px) / 2); }
+}
+
+@media (min-width: 1000px) {
+  .carousel-item { flex-basis: calc((100% - 40px) / 3); }
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  margin-top: -39px;
+  padding: 12px;
+  font-size: 24px;
+  color: #000;
+  background: rgba(255, 255, 255, 0.5);
+  border: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.carousel-arrow:hover {
+  background: #fff;
+}
+
+.carousel-arrow.prev { left: 20px; }
+.carousel-arrow.next { right: 20px; }
+.carousel-arrow.prev:hover { margin-left: -10px; }
+.carousel-arrow.next:hover { margin-right: -10px; }
+
+.carousel-dots {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.carousel-dots button {
+  width: 10px;
+  height: 10px;
+  margin: 5px 4px;
+  padding: 0;
+  background: none;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-dots button.active {
+  background: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .carousel-arrow {
+    display: none;
+  }
+}
+
+
+/* 15. Data table (REQUIEM sample, sortable by clicking a header)
+   ========================================================================== */
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.data-table th,
+.data-table td {
+  padding: 16px;
+  text-align: center;
+  border: 1px solid #93a1a1;
+}
+
+.data-table th {
+  color: #fdf6e3;
+  background: #657b83;
+  cursor: pointer;
+  user-select: none;
+}
+
+.data-table td {
+  color: #002b36;
+  background: #fdf6e3;
+}
+
+
+/* 16. Back-to-top button
+   ========================================================================== */
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  color: #fff;
+}
+
+
+/* 17. Scroll-reveal animations
+   Elements with .reveal fade in when they scroll into view (js/site.js).
+   data-reveal="fade" | "left" | "right"; the default slides up.
+   ========================================================================== */
+
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+  }
+}
+
+.reveal.revealed {
+  animation: reveal-up 0.5s both;
+}
+
+.reveal.revealed[data-reveal="fade"]  { animation-name: reveal-fade; }
+.reveal.revealed[data-reveal="left"]  { animation-name: reveal-left; }
+.reveal.revealed[data-reveal="right"] { animation-name: reveal-right; }
+
+@keyframes reveal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translate3d(0, 100%, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes reveal-left {
+  from { opacity: 0; transform: translate3d(-100%, 0, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes reveal-right {
+  from { opacity: 0; transform: translate3d(100%, 0, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal.revealed {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

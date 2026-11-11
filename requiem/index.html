@@ -1,245 +1,140 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>The REQUIEM survey</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="This is the REQUIEM survey webpage" />
-	<meta name="keywords" content="Circumgalactic medium, high redshift quasars, VLT/MUSE, Ly-Alpha halos." />
-	<meta name="author" content="EmAstro" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The REQUIEM survey</title>
+  <meta name="description" content="This is the REQUIEM survey webpage">
+  <meta name="keywords" content="Circumgalactic medium, high redshift quasars, VLT/MUSE, Ly-Alpha halos.">
+  <meta name="author" content="EmAstro">
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <script src="../js/site.js" defer></script>
+</head>
+<body>
+<div class="page">
 
-	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+  <nav class="site-nav">
+    <div class="container">
+      <ul class="nav-social">
+        <li><a href="mailto:emanuele.paolo.farina@gmail.com" aria-label="E-mail"><i class="icon-mail2"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/emanuele-paolo-farina-52bb141a" aria-label="LinkedIn"><i class="ti-linkedin"></i></a></li>
+        <li><a href="https://orcid.org/0000-0002-6822-2254" aria-label="ORCID"><i class="ti-book"></i></a></li>
+      </ul>
+      <div class="nav-bar">
+        <div class="nav-logo"><a href="../index.html"><small>Emanuele Paolo Farina</small></a></div>
+        <ul class="nav-menu">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="sample.html">Sample</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="images.html">Images &amp; Videos</a></li>
+          <li class="has-dropdown">
+            <a href="../contact.html">Contacts</a>
+            <ul class="dropdown">
+              <li><a href="mailto:emanuele.paolo.farina@gmail.com">e-mail</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Themify Icons-->
-	<link rel="stylesheet" href="css/themify-icons.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+  <header class="hero hero--small">
+    <div class="container">
+      <div class="hero-content narrow">
+        <h1 class="reveal"><img class="hero-logo" src="images/Web_REQUIEM.png" alt="The REQUIEM survey"></h1>
+      </div>
+    </div>
+  </header>
 
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+  <main>
+    <section class="section section--grey">
+      <div class="container">
+        <div class="narrow section-heading text-center reveal">
+          <h2>The <i>REQUIEM</i> Survey</h2>
+          <p class="text-justify">
+            Quasars at <i>z</i>&sim;6 are among the brightest sources in the Universe.
+            The mass of their central black holes grows by 20 times in only 100 Myr via gas accretion and their host galaxies form stars with hundreds of solar masses per year.
+            <i>How can these extreme sources sustain such a rapid gas consumption?</i>
+            An answer to this question may come from our ongoing VLT/MUSE effort targeting <i>z</i>&gt;5.7 quasars:
+            <b>R</b>eionization <b>E</b>poch <b>QU</b>asar <b>I</b>nv<b>E</b>stigation with <b>M</b>USE (<i>REQUIEM</i>) survey.
+          </p>
+          <div class="row row--spaced text-justify">
+            <div class="col-md-6 reveal">
+              <video class="img-fluid" src="movies/Web_Simulation.mp4" poster="movies/Web_Simulation.jpg" autoplay loop muted playsinline aria-label="Simulated gas temperature around a z~6 quasar"></video>
+              <p>
+                Evolution of the gas temperature in a 10<sup>12.5</sup>M<sub>&#9737;</sub> dark matter halo hosting a quasar at <i>z</i>&sim;6
+                (courtesy of <a href="https://www.mpa-garching.mpg.de/person/96178">Dr. Tiago Costa</a>).
+              </p>
+            </div>
+            <div class="col-md-6 reveal">
+              <p>
+                The main goal of the <i>REQUIEM</i> survey is to <b>probe the complex interplay between the first quasars and their surroundings</b>.
+                The early formation of super-massive black holes requires this object to be continuously feeded by pristine gas from the inter-galactic medium.
+                Simulations suggest that this &ldquo;fuel transfer&rdquo; happens via cool (T&sim;10<sup>4</sup>K) accretion streams able to survive the violent shocks induced by the first phases of quasar ignition.
+                With our VLT/MUSE iniziative we will trace this gas through its Hydrogen Ly&alpha; emission line.
+              </p>
+            </div>
+          </div>
 
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+          <h2 class="subheading">Ly&alpha; Halos</h2>
+          <p class="text-justify">
+            Direct observations of the gas located in the close environs of massive galaxies is a
+            necessary piece of information for our understanding of their formation and evolution.
+            These gas reservoirs are mostly composed by neutral hydrogen and would be themselves
+            too faint to be detected. However, the presence of a bright quasar means that they
+            are flooded and ionized by an intense radiation field. The recombination of hydrogen
+            atoms then ignites vigorous Ly&alpha; emission, such that the cloud becomes visible
+            as a Ly&alpha; nebula. The mechanism for this emission
+            is much similar to our fluorescent lamps, with the difference that the emission is not
+            induced by running electricity but powered by radiation from an accreting supermassive
+            black hole (see artistic impression below).
+          </p>
+          <div class="row--spaced text-justify">
+            <img class="img-fluid" src="images/Web_EsoArtistic.jpg" alt="Artist's impression of a quasar Lyman-alpha halo">
+            <p>
+              Credit: ESO/M. Kornmesser.
+              For further details see our <a href="https://www.eso.org/public/news/eso1921/">ESO press release</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+    <section class="section section--bordered">
+      <div class="container">
+        <div class="row">
+        <div class="col-sm-4 col-md-3 reveal" data-reveal="fade">
+          <div class="profile">
+            <a href="sample.html"><img src="images/Web_Sample.png" alt="Sample"></a>
+            <h3><a href="sample.html">Sample</a></h3>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3 reveal" data-reveal="fade">
+          <div class="profile">
+            <a href="team.html"><img src="images/Web_Team.png" alt="Team"></a>
+            <h3><a href="team.html">Team</a></h3>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3 reveal" data-reveal="fade">
+          <div class="profile">
+            <a href="publications.html"><img src="images/Web_Pubblication.png" alt="Publications"></a>
+            <h3><a href="publications.html">Publications</a></h3>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3 reveal" data-reveal="fade">
+          <div class="profile">
+            <a href="images.html"><img src="images/Web_Media.jpg" alt="Images &amp; Videos"></a>
+            <h3><a href="images.html">Images &amp; Videos</a></h3>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
-	<body>
-		
-	<div class="gtco-loader"></div>
-	
-	<div id="page">
-	<nav class="gtco-nav" role="navigation">
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-12 text-right gtco-contact">
-					<ul class="">
-						<li><a href="mailto:emanuele.paolo.farina@gmail.com"><i class="icon-mail2"></i></a></li>
-						<li><a href="https://www.linkedin.com/in/emanuele-paolo-farina-52bb141a"><i class=" ti-linkedin"></i> </a></li>
-						<li><a href="skype:pennellone20?call"><i class="ti-skype"></i></a></li>
-						<li><a href="http://adsabs.harvard.edu/cgi-bin/nph-abs_connect?db_key=AST&db_key=PRE&qform=AST&arxiv_sel=astro-ph&arxiv_sel=cond-mat&arxiv_sel=cs&arxiv_sel=gr-qc&arxiv_sel=hep-ex&arxiv_sel=hep-lat&arxiv_sel=hep-ph&arxiv_sel=hep-th&arxiv_sel=math&arxiv_sel=math-ph&arxiv_sel=nlin&arxiv_sel=nucl-ex&arxiv_sel=nucl-th&arxiv_sel=physics&arxiv_sel=quant-ph&arxiv_sel=q-bio&sim_query=YES&ned_query=YES&adsobj_query=YES&aut_logic=OR&obj_logic=OR&author=Farina%2C+E.+P.&object=&start_mon=&start_year=&end_mon=&end_year=&ttl_logic=OR&title=&txt_logic=OR&text=&nr_to_return=200&start_nr=1&jou_pick=ALL&ref_stems=&data_and=ALL&group_and=ALL&start_entry_day=&start_entry_mon=&start_entry_year=&end_entry_day=&end_entry_mon=&end_entry_year=&min_score=&sort=SCORE&data_type=SHORT&aut_syn=YES&ttl_syn=YES&txt_syn=YES&aut_wt=1.0&obj_wt=1.0&ttl_wt=0.3&txt_wt=3.0&aut_wgt=YES&obj_wgt=YES&ttl_wgt=YES&txt_wgt=YES&ttl_sco=YES&txt_sco=YES&version=1"><i class="ti-book"></i></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="../index.html"><br /><small>Emanuele Paolo Farina</small></a></div>
-				</div>
-				<div class="col-xs-8 text-right menu-1">
-					<ul>
-						<a href="index.html">Home</a>
-						<li><a href="sample.html">Sample</a></li>
-						<li><a href="team.html">Team</a></li>
-						<li><a href="publications.html">Publications</a></li>
-						<li><a href="images.html">Images &amp; Videos</a></li>
-						<li class="has-dropdown">
-							<a href="../contact.html">Contacts</a>
-							<ul class="dropdown">
-								<li><a href="mailto:emanuele.paolo.farina@gmail.com">e-mail</a></li>
-								<li><a href="skype:pennellone20?call">skype</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-	</nav>
-
-	<header id="gtco-header" class="gtco-cover gtco-cover-xs" role="banner" style="background-image:url(images/Web_REQUIEM.png);">
-		<div class="overlay"></div>
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<div class="display-t">
-						<div class="display-tc">
-							<h1 class="animate-box" data-animate-effect="fadeInUp">
-							<br style="line-height:1">
-							<img src="images/Web_REQUIEM.png" alt="The REQUIEM survey" style='height: 100%; width: 100%; object-fit: contain'/>
-							</h1>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-
-	<div id="gtco-products">
-		<div class="gtco-container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-
-					<h2>The <i>REQUIEM</i> Survey</h2>
-					<p style="text-align:justify">
-						Quasars at <i>z</i>&sim;6 are among the brightest sources in the Universe.
-						The mass of their central black holes grows by 20 times in only 100 Myr via gas accretion and their host galaxies form stars with hundreds of solar masses per year.
-						<i>How can these extreme sources sustain such a rapid gas consumption?</i>
-						An answer to this question may come from our ongoing VLT/MUSE effort targeting <i>z</i>>5.7 quasars:
-						<b>R</b>eionization <b>E</b>poch <b>QU</b>asar <b>I</b>nv<b>E</b>stigation with <b>M</b>USE (<i>REQUIEM</i>) survey.
-					</p>
-					<div class="row row-pb-md">
-						<div class="col-md-6 animate-box">
-							<img src="movies/Web_Simulation.gif" alt="The REQUIEM survey" style='height: 100%; width: 100%; object-fit: contain'/>
-							<p style="text-align:justify">
-								Evolution of the gas temperature in a 10<sup>12.5</sup>M<sub>&#9737;</sub> dark matter halo hosting a quasar at <i>z</i>&sim;6
-								(courtesy of <a href="https://www.mpa-garching.mpg.de/person/96178">Dr. Tiago Costa</a>).
-							</p>
-						</div>
-						<div class="col-md-6 animate-box">
-							<p style="text-align:justify">
-								The main goal of the <i>REQUIEM</i> survey is to <b>probe the complex interplay between the first quasars and their surroundings</b>.
-								The early formation of super-massive black holes requires this object to be continuously feeded by pristine gas from the inter-galactic medium.
-								Simulations suggest that this ``fuel transfer'' happens via cool (T&sim;10<sup>4</sup>K) accretion streams able to survive the violent shocks induced by the first phases of quasar ignition.
-								With our VLT/MUSE iniziative we will trace this gas through its Hydrogen Ly&alpha; emission line.
-							</p>
-						</div>
-					</div>
-
-					<h1>Ly&alpha; Halos</h1>
-					<p style="text-align:justify">
-						Direct observations of the gas located in the close environs of massive galaxies is a
-						necessary piece of information for our understanding of their formation and evolution. 
-						These gas reservoirs are mostly composed by neutral hydrogen and would be themselves
-						too faint to be detected. However, the presence of a bright quasar means that they 
-						are flooded and ionized by an intense radiation field. The recombination of hydrogen 
-						atoms then ignites vigorous Ly&alpha; emission, such that the cloud becomes visible 
-						as a Ly&alpha; nebula. The mechanism for this emission 
-						is much similar to our fluorescent lamps, with the difference that the emission is not 
-						induced by running electricity but powered by radiation from an accreting supermassive 
-						black hole (see artistic impression below).
-					</p>
-					<div class="row row-pb-md">
-						<img src="images/Web_EsoArtistic.jpg" alt="Halos " style='height: 100%; width: 100%; object-fit: contain'/>
-						<p style="text-align:justify">
-							Credit: ESO/M. Kornmesser.
-							For further details see our <a href="https://www.eso.org/public/news/eso1921/">ESO press release</a>.
-						</p>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="gtco-history" class="gtco-section border-bottom animate-box">
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-lg-3 col-md-3 col-sm-4 animate-box" data-animate-effect="fadeIn">
-					<div class="gtco-staff">
-						<a href="sample.html">
-						<img src="images/Web_Sample.png" alt="Sample">
-						</a>
-						<h3>
-						<a href="sample.html">
-						Sample</h3>
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-4 animate-box" data-animate-effect="fadeIn">
-					<div class="gtco-staff">
-						<a href="team.html">
-						<img src="images/Web_Team.png" alt="Team">
-						</a>
-						<h3>
-						<a href="team.html">
-						Team
-						</a>
-						</h3>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-4 animate-box" data-animate-effect="fadeIn">
-					<div class="gtco-staff">
-						<a href="publications.html">
-						<img src="images/Web_Pubblication.png" alt="Publications">
-						</a>
-						<h3>
-						<a href="publications.html">
-						Publications
-						</a>
-						</h3>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-4 animate-box" data-animate-effect="fadeIn">
-					<div class="gtco-staff">
-						<a href="images.html">
-						<img src="images/Web_Media.jpg" alt="Media">
-						</a>
-						<h3>
-						<a href="images.html">
-						Images &amp; Videos
-						</a>
-						</h3>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div>
-
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- countTo -->
-	<script src="js/jquery.countTo.js"></script>
-	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
-	<!-- Main -->
-	<script src="js/main.js"></script>
-
-	</body>
+<a href="#" class="back-to-top" aria-label="Back to top"><i class="icon-arrow-up"></i></a>
+</body>
 </html>
-

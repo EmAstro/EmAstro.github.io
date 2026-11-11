@@ -1,0 +1,11 @@
+/* REQUIEM sub-site: same layout as the main site (../../css/site.css),
+   with an orange accent and a black banner overlay. */
+
+:root {
+  --accent: #e69500;
+  --hero-overlay: rgba(0, 0, 0, 0.89);
+}
+
+.hero {
+  background-image: url("../images/Web_REQUIEM.png");
+}
