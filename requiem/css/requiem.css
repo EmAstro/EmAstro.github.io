@@ -1,0 +1,557 @@
+/* ==========================================================================
+   REQUIEM sub-site
+   Loaded after ../../css/site.css, which provides the navigation, banner,
+   grid, icons and back-to-top button. This file adds the orange theme and
+   a reading-oriented layout: a narrow text column in a serif face, figures
+   with captions, and simple lists for people, papers and talks.
+
+   Contents
+     1. Theme
+     2. Reading column
+     3. Figures
+     4. Home page: side-by-side block and page cards
+     5. Sample page: key numbers, programme list, table
+     6. Team page
+     7. Publications page
+     8. Images page
+   ========================================================================== */
+
+
+/* 1. Theme
+   ========================================================================== */
+
+:root {
+  --accent: #e69500;          /* decoration: rules, icons, buttons */
+  --accent-text: #a35c00;     /* darker orange for readable text links */
+  --hero-overlay: rgba(0, 0, 0, 0.89);
+
+  --ink: #1d1d1f;
+  --prose: #3b3b3b;
+  --muted: #6e6e73;
+  --paper: #faf7f2;
+  --rule: #e9e3d9;
+
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.hero {
+  background-image: url("../images/Web_REQUIEM.png");
+}
+
+
+/* 2. Reading column
+   ========================================================================== */
+
+.rq-section {
+  padding: 5em 0;
+}
+
+.rq-section--paper {
+  background: var(--paper);
+}
+
+.rq-prose {
+  max-width: 40rem;
+  margin: 0 auto;
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--prose);
+}
+
+.rq-prose p {
+  margin: 0 0 1.25em;
+}
+
+.rq-prose a,
+.rq-list a,
+figcaption a {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-decoration-color: rgba(230, 149, 0, 0.4);
+  text-underline-offset: 0.15em;
+}
+
+.rq-prose a:hover,
+.rq-list a:hover,
+figcaption a:hover {
+  text-decoration-color: currentColor;
+}
+
+/* Wider centred column for pages built from cards or figures */
+.rq-wide {
+  max-width: 64rem;
+}
+
+.rq-heading {
+  margin-bottom: 1.5em;
+}
+
+/* Small orange label above a title */
+.rq-eyebrow {
+  display: block;
+  margin-bottom: 0.6em;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.rq-title {
+  margin: 0 0 0.8em;
+  font-family: var(--sans);
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.rq-subtitle {
+  margin: 2.2em 0 0.8em;
+  font-family: var(--sans);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.rq-lead {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+/* Highlighted question */
+.rq-callout {
+  margin: 1.8em 0;
+  padding: 0.2em 0 0.2em 1.2em;
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink);
+  border-left: 3px solid var(--accent);
+}
+
+/* "Reionization Epoch QUasar InvEstigation with MUSE" */
+.rq-acronym b {
+  color: var(--accent-text);
+}
+
+@media (max-width: 768px) {
+  .rq-section {
+    padding: 3em 0;
+  }
+  .rq-title {
+    font-size: 1.75rem;
+  }
+  .rq-lead,
+  .rq-callout {
+    font-size: 1.15rem;
+  }
+}
+
+
+/* 3. Figures
+   ========================================================================== */
+
+.rq-figure {
+  max-width: 52rem;
+  margin: 2.5em auto;
+}
+
+.rq-figure img,
+.rq-figure video,
+.rq-split img,
+.rq-split video,
+.rq-gallery img,
+.rq-gallery video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  background: #000;
+}
+
+figcaption {
+  max-width: 40rem;
+  margin: 0.8em auto 0;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.rq-gallery figcaption,
+.rq-split figcaption {
+  margin-left: 0;
+}
+
+
+/* 4. Home page: side-by-side block and page cards
+   ========================================================================== */
+
+/* Square video next to a paragraph; stacked on narrow screens. */
+.rq-split {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 2.5rem;
+  align-items: start;
+  max-width: 56rem;
+  margin: 2.5em auto;
+}
+
+.rq-split figure {
+  margin: 0;
+}
+
+.rq-split .rq-prose {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .rq-split {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.rq-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rq-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  color: var(--prose);
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.rq-card:hover {
+  color: var(--prose);
+  border-color: var(--accent);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.rq-card img {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.rq-card strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--sans);
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.rq-card span {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+
+/* 5. Sample page: key numbers, programme list, table
+   ========================================================================== */
+
+.rq-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 44rem;
+  margin: 2.5em auto;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.rq-stats li {
+  padding: 1.25rem 0.5rem;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+
+.rq-stats strong {
+  display: block;
+  font-family: var(--sans);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.rq-stats span {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .rq-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rq-programs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.35rem 1.5rem;
+  margin: 0 0 1.5em;
+  padding: 0;
+  list-style: none;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+
+.rq-programs code {
+  font-family: var(--mono);
+  font-size: 0.9em;
+  color: var(--ink);
+}
+
+.rq-table-wrap {
+  max-width: 56rem;
+  margin: 3em auto 0;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--prose);
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.7rem 1rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.data-table th:first-child,
+.data-table td:first-child,
+.data-table th:last-child,
+.data-table td:last-child {
+  text-align: left;
+}
+
+.data-table th {
+  position: sticky;
+  top: 0;
+  font-weight: 600;
+  color: #fff;
+  background: var(--ink);
+  border-bottom: 3px solid var(--accent);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Sort direction indicator (data-order is set by js/site.js) */
+.data-table th::after {
+  content: "\2195";
+  margin-left: 0.4em;
+  opacity: 0.35;
+}
+.data-table th[data-order="asc"]::after  { content: "\2191"; opacity: 1; }
+.data-table th[data-order="desc"]::after { content: "\2193"; opacity: 1; }
+
+.data-table td:first-child {
+  font-family: var(--mono);
+  font-size: 0.9em;
+  color: var(--ink);
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: var(--paper);
+}
+
+.data-table tbody tr:hover {
+  background: #fdf0d9;
+}
+
+.data-table a {
+  color: var(--accent-text);
+}
+
+.rq-table-note {
+  max-width: 56rem;
+  margin: 0.8em auto 0;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+
+/* 6. Team page
+   ========================================================================== */
+
+.rq-people {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1em;
+  padding: 0;
+  list-style: none;
+}
+
+.rq-person {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 0.9rem;
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+
+/* Circle with the person's initials */
+.rq-person::before {
+  content: attr(data-initials);
+  display: flex;
+  flex: 0 0 2.4rem;
+  align-items: center;
+  justify-content: center;
+  height: 2.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--accent-text);
+  background: #fdf0d9;
+  border-radius: 50%;
+}
+
+.rq-person small {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.rq-person a {
+  color: inherit;
+}
+
+.rq-person--lead {
+  grid-column: 1 / -1;
+  max-width: 24rem;
+  border-color: var(--accent);
+}
+
+.rq-person--lead::before {
+  color: #fff;
+  background: var(--accent);
+}
+
+
+/* 7. Publications page
+   ========================================================================== */
+
+.rq-list {
+  margin: 0 0 1em;
+  padding: 0;
+  list-style: none;
+}
+
+.rq-list li {
+  padding: 1.1em 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.rq-list li:first-child {
+  border-top: 1px solid var(--rule);
+}
+
+.rq-meta {
+  display: block;
+  margin-bottom: 0.25em;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.rq-list .rq-item-title {
+  display: block;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.rq-list .rq-item-title a {
+  color: var(--ink);
+  text-decoration-color: rgba(230, 149, 0, 0.5);
+}
+
+.rq-list .rq-item-title a:hover {
+  color: var(--accent-text);
+}
+
+.rq-list p {
+  margin: 0.3em 0 0;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.rq-note {
+  margin-top: 2.5em;
+  padding: 1em 1.2em;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+  background: var(--paper);
+  border-radius: 8px;
+}
+
+
+/* 8. Images page
+   ========================================================================== */
+
+.rq-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem 2.5rem;
+}
+
+.rq-gallery figure {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .rq-gallery {
+    grid-template-columns: 1fr;
+  }
+}

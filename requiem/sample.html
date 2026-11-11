@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The REQUIEM survey</title>
+  <title>Sample | The REQUIEM survey</title>
   <meta name="description" content="This is the REQUIEM survey webpage">
   <meta name="keywords" content="Circumgalactic medium, high redshift quasars, VLT/MUSE, Ly-Alpha halos.">
   <meta name="author" content="EmAstro">
   <link rel="stylesheet" href="../css/site.css">
-  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/requiem.css">
   <script src="../js/site.js" defer></script>
 </head>
 <body>
@@ -48,84 +48,99 @@
     </div>
   </header>
 
-  <main class="section section--grey">
+  <main class="rq-section">
     <div class="container">
-      <div class="narrow section-heading text-center reveal">
-        <h2>The Sample</h2>
-        <p class="text-justify">
-          Currently, our sample consists of 31 quasars in the redshift range 5.77&lt;<i>z</i>&lt;6.62 located in the southern sky.
-          Observations have been collected with the MUSE instrument on the VLT telescope YEPUN as a part of the ESO programs:
-          60.A-9321(A, Science Verification),
-          094.B-0893(A, PI: Venemans),
-          095.B-0419(A, PI: Roche),
-          095.A-0714(A, PI: Karman),
-          099.A-0682(A, PI: Farina),
-          0101.A-0656(A, PI: Farina),
-          0103.A-0562(A, PI: Farina),
-          and 297.A-5054(A, PI: Decarli).
+      <div class="rq-prose">
+        <span class="rq-eyebrow">Data</span>
+        <h2 class="rq-title">The sample</h2>
+        <p class="rq-lead">
+          Our sample consists of 31 quasars at 5.77&lt;<i>z</i>&lt;6.62 in the southern sky,
+          observed with the MUSE integral-field spectrograph on Yepun, the fourth unit telescope of ESO&rsquo;s VLT.
         </p>
-        <div class="row row--spaced">
-          <div class="col-md-6 reveal">
-            <img class="img-fluid" src="images/Web_ZMag.png" alt="Redshift and magnitude of the REQUIEM survey sample">
-          </div>
-          <div class="col-md-6 reveal">
-            <p class="text-justify">
-              These quasars have an average redshift of <i>z</i>=6.22 and an average absolute magnitude of M<sub>1450</sub>=-26.9mag.
-              Among these, only J2228+0110 is a confirmed radio-loud quasar.
-              For most of our targets, sensitive ALMA observations of the [CII] fine-structure line and of the underlying dust continuum have been collected (Decarli et al. 2017, 2018, Venemans et al. 2018).
-            </p>
-          </div>
-        </div>
-        <div class="table-scroll">
-          <table class="data-table" data-sortable>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th><i>z</i></th>
-                <th>M<sub>1450</sub></th>
-                <th>Exp. Time</th>
-                <th>Prog. ID</th>
-                <th>Ref.</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr><td>J0305-3150</td><td>6.6145</td><td>-26.12</td><td>8640</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=094.B-0893">094.B-0893</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2017ApJ...848...78F/abstract">F17</a>; <a href="https://emastro.github.io/requiem/sample.html">F19</a></td></tr>
-            <tr><td>P323+12</td><td>6.5881</td><td>-27.06</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>P231-20</td><td>6.5864</td><td>-27.14</td><td>11856</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=099.A-0682">099.A-0682</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..163M/abstract">M19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..131D/abstract">D19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>P036+03</td><td>6.5412</td><td>-27.28</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J2318-3113</td><td>6.4435</td><td>-26.06</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>P183+05</td><td>6.4386</td><td>-26.98</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=099.A-0682">099.A-0682</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J0210-0456</td><td>6.4323</td><td>-24.47</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J2329-0301</td><td>6.4164</td><td>-25.19</td><td>7170</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=60.A-9321">60.A-9321</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..131D/abstract">D19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J1152+0055</td><td>6.3643</td><td>-25.30</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J2211-3206</td><td>6.3394</td><td>-26.66</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J0142-3327</td><td>6.3379</td><td>-27.76</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J0100+2802</td><td>6.3258</td><td>-29.09</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J1030+0524</td><td>6.3000</td><td>-26.93</td><td>23152</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=095.A-0714">095.A-0714</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..131D/abstract">D19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>P308-21</td><td>6.2341</td><td>-26.29</td><td>17784</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=099.A-0682">099.A-0682</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>P065-26</td><td>6.1877</td><td>-27.21</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>P359-06</td><td>6.1722</td><td>-26.74</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J2229+1457</td><td>6.1517</td><td>-24.72</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>P217-16</td><td>6.1498</td><td>-26.89</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J2219+0102</td><td>6.1492</td><td>-22.54</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J2318-3029</td><td>6.1458</td><td>-26.16</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J1509-1749</td><td>6.1225</td><td>-27.09</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J2216-0016</td><td>6.0962</td><td>-23.82</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J2100-1715</td><td>6.0812</td><td>-25.50</td><td>13338</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=297.A-5054">297.A-5054</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..163M/abstract">M19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..131D/abstract">D19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J2054-0005</td><td>6.0391</td><td>-26.15</td><td>3869</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>P340-18</td><td>6.01</td><td>-26.36</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J0055+0146</td><td>6.0060</td><td>-24.76</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>P009-10</td><td>6.0039</td><td>-26.50</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>P007+04</td><td>6.0008</td><td>-26.59</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J2228+0110</td><td>5.9030</td><td>-24.47</td><td>40950</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=095.B-0419">095.B-0419</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..131D/abstract">D19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J1044-0125</td><td>5.7847</td><td>-27.32</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            <tr><td>J0129-0035</td><td>5.7787</td><td>-23.83</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
-            </tbody>
-          </table>
+      </div>
+
+      <ul class="rq-stats">
+        <li><strong>31</strong><span>quasars</span></li>
+        <li><strong><i>z</i> = 6.22</strong><span>average redshift</span></li>
+        <li><strong>&minus;26.9 mag</strong><span>average M<sub>1450</sub></span></li>
+      </ul>
+
+      <div class="rq-split">
+        <figure class="reveal">
+          <img src="images/Web_ZMag.png" alt="Redshift and absolute magnitude of the REQUIEM quasars">
+          <figcaption>Redshift and absolute magnitude of the quasars in the sample.</figcaption>
+        </figure>
+        <div class="rq-prose">
+          <p>
+            Only one of these quasars, J2228+0110, is a confirmed radio-loud source. For most of our
+            targets, sensitive ALMA observations of the [CII] fine-structure line and of the
+            underlying dust continuum are also available (Decarli et al. 2017, 2018; Venemans et al. 2018).
+          </p>
+          <p>The data were collected as part of the following ESO programs:</p>
+          <ul class="rq-programs">
+            <li><code>60.A-9321(A)</code> &mdash; Science Verification</li>
+            <li><code>094.B-0893(A)</code> &mdash; PI: Venemans</li>
+            <li><code>095.B-0419(A)</code> &mdash; PI: Roche</li>
+            <li><code>095.A-0714(A)</code> &mdash; PI: Karman</li>
+            <li><code>099.A-0682(A)</code> &mdash; PI: Farina</li>
+            <li><code>0101.A-0656(A)</code> &mdash; PI: Farina</li>
+            <li><code>0103.A-0562(A)</code> &mdash; PI: Farina</li>
+            <li><code>297.A-5054(A)</code> &mdash; PI: Decarli</li>
+          </ul>
         </div>
       </div>
+
+      <div class="rq-table-wrap">
+        <table class="data-table" data-sortable>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th><i>z</i></th>
+              <th>M<sub>1450</sub></th>
+              <th>Exp. time [s]</th>
+              <th>Program ID</th>
+              <th>Ref.</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr><td>J0305-3150</td><td>6.6145</td><td>&minus;26.12</td><td>8640</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=094.B-0893">094.B-0893</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2017ApJ...848...78F/abstract">F17</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>P323+12</td><td>6.5881</td><td>&minus;27.06</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>P231-20</td><td>6.5864</td><td>&minus;27.14</td><td>11856</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=099.A-0682">099.A-0682</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..163M/abstract">M19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..131D/abstract">D19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>P036+03</td><td>6.5412</td><td>&minus;27.28</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J2318-3113</td><td>6.4435</td><td>&minus;26.06</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>P183+05</td><td>6.4386</td><td>&minus;26.98</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=099.A-0682">099.A-0682</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J0210-0456</td><td>6.4323</td><td>&minus;24.47</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J2329-0301</td><td>6.4164</td><td>&minus;25.19</td><td>7170</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=60.A-9321">60.A-9321</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..131D/abstract">D19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J1152+0055</td><td>6.3643</td><td>&minus;25.30</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J2211-3206</td><td>6.3394</td><td>&minus;26.66</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J0142-3327</td><td>6.3379</td><td>&minus;27.76</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J0100+2802</td><td>6.3258</td><td>&minus;29.09</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J1030+0524</td><td>6.3000</td><td>&minus;26.93</td><td>23152</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=095.A-0714">095.A-0714</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..131D/abstract">D19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>P308-21</td><td>6.2341</td><td>&minus;26.29</td><td>17784</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=099.A-0682">099.A-0682</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>P065-26</td><td>6.1877</td><td>&minus;27.21</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>P359-06</td><td>6.1722</td><td>&minus;26.74</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J2229+1457</td><td>6.1517</td><td>&minus;24.72</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>P217-16</td><td>6.1498</td><td>&minus;26.89</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J2219+0102</td><td>6.1492</td><td>&minus;22.54</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J2318-3029</td><td>6.1458</td><td>&minus;26.16</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J1509-1749</td><td>6.1225</td><td>&minus;27.09</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J2216-0016</td><td>6.0962</td><td>&minus;23.82</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J2100-1715</td><td>6.0812</td><td>&minus;25.50</td><td>13338</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=297.A-5054">297.A-5054</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..163M/abstract">M19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..131D/abstract">D19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J2054-0005</td><td>6.0391</td><td>&minus;26.15</td><td>3869</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>P340-18</td><td>6.01</td><td>&minus;26.36</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J0055+0146</td><td>6.0060</td><td>&minus;24.76</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>P009-10</td><td>6.0039</td><td>&minus;26.50</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>P007+04</td><td>6.0008</td><td>&minus;26.59</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0101.A-0656">0101.A-0656</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J2228+0110</td><td>5.9030</td><td>&minus;24.47</td><td>40950</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=095.B-0419">095.B-0419</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...881..131D/abstract">D19</a>; <a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J1044-0125</td><td>5.7847</td><td>&minus;27.32</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+              <tr><td>J0129-0035</td><td>5.7787</td><td>&minus;23.83</td><td>2964</td><td><a href="http://archive.eso.org/wdb/wdb/eso/sched_rep_arc/query?progid=0103.A-0562">0103.A-0562</a></td><td><a href="https://ui.adsabs.harvard.edu/abs/2019arXiv191108498F/abstract">F19</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="rq-table-note">Click a column header to sort the table.</p>
     </div>
   </main>
+
 </div>
 
 <a href="#" class="back-to-top" aria-label="Back to top"><i class="icon-arrow-up"></i></a>

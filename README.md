@@ -15,8 +15,9 @@ fonts/                            Icon fonts, subset to the glyphs in use
 images/                           Images used by the main site
 
 requiem/                          REQUIEM survey pages
-  css/theme.css                   Only overrides colours and the banner image;
-                                  layout comes from ../css/site.css
+  css/requiem.css                 Orange theme and reading layout (serif text
+                                  column, figures, team/paper lists, table);
+                                  navigation and banner come from ../css/site.css
   images/, movies/                REQUIEM media (MP4 videos with poster frames)
 
 aether/                           Aether survey pages (self-contained)
@@ -26,7 +27,7 @@ push.sh                           Commit and push everything
 ## Common edits
 
 - **Change a colour:** edit the variables at the top of `css/site.css`
-  (`requiem/css/theme.css` for REQUIEM).
+  (`requiem/css/requiem.css` for REQUIEM).
 - **Add a page:** copy an existing page, keep the `<nav>` block, and move
   `class="active"` to the new menu item. The navigation is repeated in every
   page, so a new menu entry must be added to each of them.

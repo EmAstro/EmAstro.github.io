@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The REQUIEM survey</title>
+  <title>Images & Videos | The REQUIEM survey</title>
   <meta name="description" content="This is the REQUIEM survey webpage">
   <meta name="keywords" content="Circumgalactic medium, high redshift quasars, VLT/MUSE, Ly-Alpha halos.">
   <meta name="author" content="EmAstro">
   <link rel="stylesheet" href="../css/site.css">
-  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/requiem.css">
   <script src="../js/site.js" defer></script>
 </head>
 <body>
@@ -48,48 +48,33 @@
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <div class="narrow section-heading text-center reveal">
-        <h2>Images and Videos</h2>
+  <main class="rq-section">
+    <div class="container rq-wide">
+      <div class="rq-heading">
+        <span class="rq-eyebrow">Media</span>
+        <h2 class="rq-title">Images and videos</h2>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-            <figure class="feature reveal" data-reveal="left">
-              <div class="feature-text text-justify">
-                <img class="img-fluid" src="images/Web_Detected.png" alt="Detected halos">
-                <p>Subsample of the Ly&alpha; halos detected around <i>z</i>&#8776;6 quasars.
-                The image shows how diverse is the distribution of cool hydrogen around massive galaxies at the cosmic dawn.</p>
-              </div>
-            </figure>
-            <figure class="feature reveal" data-reveal="left">
-              <div class="feature-text text-justify">
-                <video class="img-fluid" src="movies/Web_P308m21.mp4" poster="movies/Web_P308m21.jpg" autoplay loop muted playsinline aria-label="3D Lyman-alpha emission around P308-21"></video>
-                <p>3D distribution of the Ly&alpha; emission around the quasar P308-21 at <i>z</i>&#8776;6.23.
-                The gas appears to be in a relatively quiescent motion, suggesting that it is moving within the dark matter halo where the central quasar resides.</p>
-              </div>
-            </figure>
-        </div>
-        <div class="col-md-6">
-            <figure class="feature reveal" data-reveal="left">
-              <div class="feature-text text-justify">
-                <img class="img-fluid" src="movies/Web_Evolution.gif" alt="Surface brightness profile evolution">
-                <p>Evolution of the median Ly&alpha; surface brightness profile around quasars at different redshifts.
-                The surface brightness is corrected for redshift dimming and the projected distance is normalized by the virial radius of a 10<sup>12.5</sup>M<sub>&#9737;</sub> dark matter halo.</p>
-              </div>
-            </figure>
-            <figure class="feature reveal" data-reveal="left">
-              <div class="feature-text text-justify">
-                <video class="img-fluid" src="https://cdn.eso.org/videos/hd_1080p25_screen/eso1921b.mp4" poster="images/Web_EsoMerger.jpg" controls preload="none"></video>
-                <p>3D visualization of the Ly&alpha; (blue) and [CII] (orange) emission around the quasar P308-21.
-                For more details see our <a href="https://www.eso.org/public/news/eso1921/">ESO press release</a>.
-                Credit: ESO/Farina et al.; ALMA (ESO/NAOJ/NRAO), Decarli et al.; L. Cal&ccedil;ada</p>
-              </div>
-            </figure>
-        </div>
+      <div class="rq-gallery">
+        <figure class="reveal">
+          <img src="images/Web_Detected.png" alt="Lyman-alpha halos detected around z~6 quasars">
+          <figcaption>A subsample of the Ly&alpha; halos detected around <i>z</i>&asymp;6 quasars, showing how diverse the distribution of cool hydrogen around massive galaxies is at cosmic dawn.</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="movies/Web_Evolution.gif" alt="Evolution of the Lyman-alpha surface brightness profile with redshift">
+          <figcaption>Evolution of the median Ly&alpha; surface-brightness profile around quasars at different redshifts. The surface brightness is corrected for redshift dimming, and the projected distance is normalized by the virial radius of a 10<sup>12.5</sup>M<sub>&#9737;</sub> dark matter halo.</figcaption>
+        </figure>
+        <figure class="reveal">
+          <video src="movies/Web_P308m21.mp4" poster="movies/Web_P308m21.jpg" autoplay loop muted playsinline aria-label="3D view of the Lyman-alpha emission around the quasar P308-21"></video>
+          <figcaption>3D distribution of the Ly&alpha; emission around the quasar P308&minus;21 at <i>z</i>&asymp;6.23. The gas appears to move rather quiescently, suggesting that it lies within the dark matter halo that hosts the quasar.</figcaption>
+        </figure>
+        <figure class="reveal">
+          <video src="https://cdn.eso.org/videos/hd_1080p25_screen/eso1921b.mp4" poster="images/Web_EsoMerger.jpg" controls preload="none" aria-label="3D visualization of the Lyman-alpha and [CII] emission around P308-21"></video>
+          <figcaption>3D visualization of the Ly&alpha; (blue) and [CII] (orange) emission around the quasar P308&minus;21. See our <a href="https://www.eso.org/public/news/eso1921/">ESO press release</a> for details. Credit: ESO/Farina et al.; ALMA (ESO/NAOJ/NRAO), Decarli et al.; L. Cal&ccedil;ada.</figcaption>
+        </figure>
       </div>
     </div>
   </main>
+
 </div>
 
 <a href="#" class="back-to-top" aria-label="Back to top"><i class="icon-arrow-up"></i></a>

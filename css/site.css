@@ -1,7 +1,7 @@
 /* ==========================================================================
    Emanuele Paolo Farina — shared stylesheet
-   Used by the main site and by the REQUIEM sub-site (which only overrides
-   the colour variables in requiem/css/theme.css).
+   Used by the main site and by the REQUIEM sub-site, which adds its own
+   colours and reading layout in requiem/css/requiem.css.
 
    Contents
      1. Theme variables
@@ -18,9 +18,8 @@
     12. Contact details
     13. Buttons
     14. Image carousel
-    15. Data table
-    16. Back-to-top button
-    17. Scroll-reveal animations
+    15. Back-to-top button
+    16. Scroll-reveal animations
    ========================================================================== */
 
 
@@ -1041,40 +1040,7 @@ figure.feature {
 }
 
 
-/* 15. Data table (REQUIEM sample, sortable by clicking a header)
-   ========================================================================== */
-
-.table-scroll {
-  overflow-x: auto;
-}
-
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #ddd;
-}
-
-.data-table th,
-.data-table td {
-  padding: 16px;
-  text-align: center;
-  border: 1px solid #93a1a1;
-}
-
-.data-table th {
-  color: #fdf6e3;
-  background: #657b83;
-  cursor: pointer;
-  user-select: none;
-}
-
-.data-table td {
-  color: #002b36;
-  background: #fdf6e3;
-}
-
-
-/* 16. Back-to-top button
+/* 15. Back-to-top button
    ========================================================================== */
 
 .back-to-top {
@@ -1105,7 +1071,7 @@ figure.feature {
 }
 
 
-/* 17. Scroll-reveal animations
+/* 16. Scroll-reveal animations
    Elements with .reveal fade in when they scroll into view (js/site.js).
    data-reveal="fade" | "left" | "right"; the default slides up.
    ========================================================================== */

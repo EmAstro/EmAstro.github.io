@@ -180,8 +180,9 @@
 
           var rows = Array.prototype.slice.call(body.rows);
           rows.sort(function (a, b) {
-            var x = a.cells[column].textContent.trim();
-            var y = b.cells[column].textContent.trim();
+            // Treat the typographic minus sign (U+2212) as a normal "-".
+            var x = a.cells[column].textContent.trim().replace(/\u2212/g, "-");
+            var y = b.cells[column].textContent.trim().replace(/\u2212/g, "-");
             var nx = parseFloat(x), ny = parseFloat(y);
             var result = !isNaN(nx) && !isNaN(ny) ? nx - ny : x.localeCompare(y);
             return ascending ? result : -result;
