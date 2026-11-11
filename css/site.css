@@ -24,19 +24,26 @@
 
 
 /* 1. Theme variables
+   Colours come from the colour-blind-safe Okabe-Ito palette, built around
+   its bluish green (#009E73). Darker shades of that green are used where
+   text must stay readable (WCAG AA contrast of at least 4.5:1).
+   Other Okabe-Ito colours, for reference: orange #E69F00, sky blue #56B4E9,
+   yellow #F0E442, blue #0072B2, vermillion #D55E00, reddish purple #CC79A7.
    ========================================================================== */
 
 :root {
-  --accent: #17b794;
-  --hero-overlay: rgba(29, 43, 83, 0.89);
+  --accent: #009e73;          /* Okabe-Ito bluish green: icons, rules, dots */
+  --accent-text: #007656;     /* same green, 25% darker: links on light backgrounds */
+  --hero-overlay: rgba(0, 48, 35, 0.86); /* Okabe-Ito black mixed with 30% of the green */
 
-  /* The three home-page cards use progressively darker greens. */
-  --card-1: #17b794;
-  --card-1-icon: #15a989;
-  --card-2: #15a585;
-  --card-2-icon: #13977a;
-  --card-3: #129377;
-  --card-3-icon: #118a6f;
+  /* The three home-page cards use progressively darker shades of the green,
+     dark enough for white body text. */
+  --card-1: #008662;
+  --card-1-icon: #007858;
+  --card-2: #007e5c;
+  --card-2-icon: #007153;
+  --card-3: #007656;
+  --card-3-icon: #006a4d;
 
   --text: #777;
   --heading: #000;
@@ -74,7 +81,7 @@ body {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: none;
   transition: color 0.5s;
 }
@@ -271,6 +278,7 @@ sub { bottom: -0.25em; }
 .nav-social a {
   padding: 5px 10px;
   font-size: 14px;
+  color: var(--accent);
 }
 
 .nav-social a:hover {
@@ -597,6 +605,10 @@ sub { bottom: -0.25em; }
   line-height: 1.5;
 }
 
+.hero a {
+  color: var(--accent);
+}
+
 .hero a:hover {
   color: #fff;
 }
@@ -691,7 +703,7 @@ sub { bottom: -0.25em; }
 
 /* Research page: accent-coloured section titles. */
 .section-heading--accent h2 {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 /* Secondary title inside a section (no capitals, no underline). */
@@ -745,7 +757,14 @@ sub { bottom: -0.25em; }
 .home-card p {
   font-size: 16px;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Links inside the green cards: white and underlined. */
+.home-card p a:not(.btn) {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 .home-card .card-icon {
