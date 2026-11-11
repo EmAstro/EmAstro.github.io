@@ -24,15 +24,25 @@
 
 
 /* 1. Theme variables
-   Colours come from the colour-blind-safe Okabe-Ito palette, built around
-   its bluish green (#009E73). Darker shades of that green are used where
-   text must stay readable (WCAG AA contrast of at least 4.5:1).
-   Other Okabe-Ito colours, for reference: orange #E69F00, sky blue #56B4E9,
-   yellow #F0E442, blue #0072B2, vermillion #D55E00, reddish purple #CC79A7.
+   Colours come from the colour-blind-safe Okabe-Ito palette. Its bluish
+   green is the main colour; the others are used as secondary accents.
+   Blue and vermillion are dark enough for headings and bold text; orange,
+   sky blue, yellow and purple are too light for text on white, so they are
+   only used for markers and decoration.
    ========================================================================== */
 
 :root {
-  --accent: #009e73;          /* Okabe-Ito bluish green: icons, rules, dots */
+  /* Okabe-Ito palette */
+  --oi-orange: #e69f00;
+  --oi-sky: #56b4e9;
+  --oi-green: #009e73;
+  --oi-yellow: #f0e442;
+  --oi-blue: #0072b2;
+  --oi-vermillion: #d55e00;
+  --oi-purple: #cc79a7;
+  --oi-black: #000;
+
+  --accent: var(--oi-green);  /* main colour: icons, rules, dots */
   --accent-text: #007656;     /* same green, 25% darker: links on light backgrounds */
   --hero-overlay: rgba(0, 48, 35, 0.86); /* Okabe-Ito black mixed with 30% of the green */
 
@@ -692,7 +702,7 @@ sub { bottom: -0.25em; }
   width: 50px;
   height: 2px;
   margin-left: -25px;
-  background: var(--accent);
+  background: var(--section-color, var(--accent));
 }
 
 .section-heading p {
@@ -701,9 +711,56 @@ sub { bottom: -0.25em; }
   color: #1a1a1a;
 }
 
-/* Research page: accent-coloured section titles. */
+/* Research page: each topic has its own colour for title, underline,
+   list markers and carousel dots. */
+.theme-green      { --section-color: var(--accent-text); }
+.theme-blue       { --section-color: var(--oi-blue); }
+.theme-vermillion { --section-color: var(--oi-vermillion); }
+
 .section-heading--accent h2 {
-  color: var(--accent-text);
+  color: var(--section-color, var(--accent-text));
+}
+
+/* Bulleted list with coloured round markers */
+.dot-list {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+/* Inside a section heading block, match the paragraph text. */
+.section-heading .dot-list {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #1a1a1a;
+}
+
+.dot-list li {
+  position: relative;
+  margin-bottom: 8px;
+  padding-left: 28px;
+}
+
+.dot-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.55em;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  background: var(--oi-green);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(0, 158, 115, 0.18);
+}
+
+.dot-list li:nth-child(3n + 2)::before {
+  background: var(--oi-sky);
+  box-shadow: 0 0 0 4px rgba(86, 180, 233, 0.22);
+}
+
+.dot-list li:nth-child(3n + 3)::before {
+  background: var(--oi-orange);
+  box-shadow: 0 0 0 4px rgba(230, 159, 0, 0.2);
 }
 
 /* Secondary title inside a section (no capitals, no underline). */
@@ -857,6 +914,10 @@ sub { bottom: -0.25em; }
   color: var(--accent);
 }
 
+.feature-icon--blue {
+  color: var(--oi-blue);
+}
+
 .feature-text {
   flex: 0 0 80%;
 }
@@ -869,6 +930,12 @@ sub { bottom: -0.25em; }
 /* Captioned images and videos (REQUIEM images page) */
 figure.feature {
   margin: 0 0 30px;
+}
+
+
+/* CV page: dates of each position */
+.career b {
+  color: var(--oi-blue);
 }
 
 
@@ -934,9 +1001,9 @@ figure.feature {
   color: #ccc;
 }
 
-.contact-info .address::before { content: "\e9d1"; font-size: 30px; }
-.contact-info .email::before   { content: "\e9da"; }
-.contact-info .url::before     { content: "\e9af"; }
+.contact-info .address::before { content: "\e9d1"; font-size: 30px; color: var(--oi-vermillion); }
+.contact-info .email::before   { content: "\e9da"; color: var(--oi-blue); }
+.contact-info .url::before     { content: "\e9af"; color: var(--oi-green); }
 
 @media (max-width: 992px) {
   .contact-info {
@@ -1043,13 +1110,13 @@ figure.feature {
   margin: 5px 4px;
   padding: 0;
   background: none;
-  border: 2px solid var(--accent);
+  border: 2px solid var(--section-color, var(--accent));
   border-radius: 50%;
   cursor: pointer;
 }
 
 .carousel-dots button.active {
-  background: var(--accent);
+  background: var(--section-color, var(--accent));
 }
 
 @media (max-width: 768px) {
@@ -1073,7 +1140,7 @@ figure.feature {
   width: 50px;
   height: 50px;
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--accent);
   border-radius: 4px;
   opacity: 0;
   visibility: hidden;
